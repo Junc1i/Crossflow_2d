@@ -117,7 +117,7 @@ def get_config():
     config.sample = d(
         sample_steps=50,                                        # sample steps duing inference/testing
         n_samples=500,                                        # number of samples for testing (during training, we sample 10K images, which is hardcoded in the training script)
-        mini_batch_size=1,                                     # batch size for testing (i.e., the number of images generated per GPU)
+        mini_batch_size=2,                                     # batch size for testing (i.e., the number of images generated per GPU)
         cfg=False,
         scale=7,                                                # cfg scale
         path='/storage/v-jinpewang/lab_folder/junchao/Crossflow_training/Crossflow_2d/sample/samplesave_wo_textbox'

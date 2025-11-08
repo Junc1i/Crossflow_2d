@@ -317,7 +317,7 @@ def train(config):
                 train_state.save(os.path.join(config.ckpt_root, f'{train_state.step}.ckpt'))
             accelerator.wait_for_everyone()
             ######需要修改n_samples
-            fid = eval_step(n_samples=config.train.n_samples_eval, sample_steps=50)  # calculate fid of the saved checkpoint
+            fid = eval_step(n_samples=50, sample_steps=50)  # calculate fid of the saved checkpoint
             step_fid.append((train_state.step, fid))
 
             torch.cuda.empty_cache()
