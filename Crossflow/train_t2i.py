@@ -108,7 +108,7 @@ def train(config):
 #        print("para.device:",param.device) 
 
     autoencoder = libs.autoencoder.get_model(**config.autoencoder)
-    #autoencoder.to(device)
+    autoencoder.to(device)
 
     if config.nnet.model_args.clip_dim == 4096:
         llm = "Janus-Pro-7B"
@@ -129,7 +129,6 @@ def train(config):
     #def encode(_batch):
     #    return autoencoder.encode(_batch)
 
-    @ torch.cuda.amp.autocast()
     def decode(_batch):
         return autoencoder.decode(_batch)
 
